@@ -1,4 +1,4 @@
-# FoodFreezer
+# FeelingCozy
 Decreases the rate food loses effectiveness when at home
 
 Slows or pauses food decay while you're inside your base (ward area) and comfortable enough.
