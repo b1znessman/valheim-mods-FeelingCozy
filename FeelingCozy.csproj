@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <AssemblyName>FeelingCozy</AssemblyName>
+    <RootNamespace>FeelingCozy</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <!-- Set VALHEIM_DIR to your Valheim install folder (the one with valheim.exe),
+         either here or as an environment variable. BepInEx and Jotunn must already be installed there. -->
+    <VALHEIM_DIR Condition="'$(VALHEIM_DIR)' == ''">C:\Program Files (x86)\Steam\steamapps\common\Valheim</VALHEIM_DIR>
+    <Managed>$(VALHEIM_DIR)\valheim_Data\Managed</Managed>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="assembly_valheim"><HintPath>$(Managed)\assembly_valheim.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(Managed)\UnityEngine.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(Managed)\UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="BepInEx"><HintPath>$(VALHEIM_DIR)\BepInEx\core\BepInEx.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(VALHEIM_DIR)\BepInEx\core\0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Jotunn"><HintPath>$(VALHEIM_DIR)\BepInEx\plugins\Jotunn.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+
+</Project>
